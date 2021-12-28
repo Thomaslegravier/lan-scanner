@@ -63,7 +63,6 @@
 @implementation LanScan
 
 - (id)initWithDelegate:(id<LANScanDelegate>)delegate {
-    deb(@"init scanner");
     self = [super init];
     if(self) {
         self.delegate = delegate;
@@ -112,8 +111,6 @@
 
 - (void)start {
     
-    deb(@"start scan for router: %@", [self getRouterIP]);
-
     //Initializing the dictionary that holds the Brands name for each MAC Address
 
     self.brandDictionary = [[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource: @"data" ofType: @"plist"]] mutableCopy];
@@ -148,7 +145,6 @@
 }
 
 - (void)stop {
-    deb(@"stop scan");
     [self.timer invalidate];
     self.timer = nil;
 }
@@ -196,9 +192,6 @@
                                       nil];
                 
                 [self.delegate lanScanDidFindNewDevice: dict];
-            } else {
-                // If debug mode is active
-                deb(@"%@", error);
             }
             
         }];
