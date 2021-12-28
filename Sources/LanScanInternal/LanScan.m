@@ -128,7 +128,7 @@
     if ([self isIpAddressValid:self.localAddress] && (a.count == 4) && (b.count == 4))
     {
         for (int i = 0; i < 4; i++) {
-            int and = (int)[[a objectAtIndex:i] integerValue] & [[b objectAtIndex:i] integerValue];
+            int and = (int)[[a objectAtIndex:i] integerValue] & [[b objectAtIndex:i] intValue];
             if (!self.baseAddress.length)
             {
                 self.baseAddress = [NSString stringWithFormat:@"%d", and];
