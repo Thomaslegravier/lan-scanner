@@ -121,7 +121,7 @@ struct arpreq {
 #define	ATF_PUBL	0x08	/* publish entry (respond for other host) */
 #define	ATF_USETRAILERS	0x10	/* has requested trailers */
 
-struct arpstat {
+struct arpstatO {
 	/* Normal things that happen: */
 	uint32_t txrequests;	/* # of ARP requests sent by this host. */
 	uint32_t txreplies;	/* # of ARP replies sent by this host. */
